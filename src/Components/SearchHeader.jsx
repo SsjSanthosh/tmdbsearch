@@ -31,7 +31,6 @@ function SearchHeader(props) {
         >
           <option value="movie">Movies</option>
           <option value="tv">TV shows</option>
-          <option value="person">People</option>
         </select>
       </div>
     </div>

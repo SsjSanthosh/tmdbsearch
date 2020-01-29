@@ -1,17 +1,19 @@
 import React from "react";
-
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import SearchHeader from "./Components/SearchHeader";
 import ItemList from "./Components/ItemList";
 import { Provider } from "react-redux";
 import store from "./Redux/Store";
+import DisplayItem from "./Components/DisplayItem";
+import Main from "./Main";
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <SearchHeader />
-        <ItemList />
-      </div>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route exact path={`/display/:id`} component={DisplayItem} />
+      </Switch>
     </Provider>
   );
 }
