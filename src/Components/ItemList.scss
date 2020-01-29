@@ -1,0 +1,14 @@
+.list {
+  width: 100%;
+  &-container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    margin: auto;
+    @media screen and (max-width: 968px) {
+      width: 90%;
+    }
+  }
+}
