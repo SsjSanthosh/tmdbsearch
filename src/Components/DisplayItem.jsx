@@ -112,7 +112,7 @@ function DisplayItem(props) {
                 <p className="display-status">
                   {item.status && <span>Status - {item.status} </span>}
                 </p>
-                <Link to="/">
+                <Link to="/tmdbsearch">
                   {" "}
                   <button className="button">Go Back</button>
                 </Link>
