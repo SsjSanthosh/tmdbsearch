@@ -11,8 +11,8 @@ function App() {
   return (
     <Provider store={store}>
       <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path={`/display/:id`} component={DisplayItem} />
+        <Route exact path="/tmdbsearch" component={Main} />
+        <Route exact path={`/tmdbsearch/display/:id`} component={DisplayItem} />
       </Switch>
     </Provider>
   );
