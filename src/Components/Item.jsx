@@ -7,7 +7,7 @@ export default function Item({ item }) {
     : "http://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg";
 
   return (
-    <Link to={`/display/${item.id}`}>
+    <Link to={`/tmdbsearch/display/${item.id}`}>
       <div className="item-container">
         <div className="poster-container">
           <img src={posterUrl} className="poster-img" alt="poster" />
