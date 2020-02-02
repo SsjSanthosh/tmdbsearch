@@ -14,7 +14,6 @@ function SearchHeader(props) {
     });
   };
 
-  console.log(option);
   return (
     <div className="header">
       <div className="header-container">

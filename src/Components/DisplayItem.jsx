@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./DisplayItem.scss";
 import { getDisplayItem } from "./getDisplayItem";
-import imdbLogo from "./imdbLogo.png";
+
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 function DisplayItem(props) {
-  console.log(props.type);
   let id = props.match.params.id;
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
@@ -14,17 +13,17 @@ function DisplayItem(props) {
       setItem(data);
       setLoading(false);
     });
-  }, []);
+  }, [id, props.type]);
 
   const bg = {
     backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6),rgba(0,0,0,0.8)),url("https://image.tmdb.org/t/p/original${item.backdrop_path}")`,
     backgroundSize: "cover"
   };
-  console.log(item);
-  if (item.budget == 0) {
+
+  if (parseInt(item.budget) === 0) {
     delete item.budget;
   }
-  if (item.revenue == 0) {
+  if (parseInt(item.revenue) === 0) {
     delete item.revenue;
   }
   return (
@@ -55,7 +54,7 @@ function DisplayItem(props) {
                 </p>
                 <p className="display-rating">
                   {" "}
-                  Average Rating - <i class="fas fa-star"></i>{" "}
+                  Average Rating - <i className="fas fa-star"></i>{" "}
                   {item.vote_average}
                 </p>
                 <p className="display-runtime">

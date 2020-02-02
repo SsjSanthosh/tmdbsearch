@@ -13,11 +13,11 @@ function ItemList({ search, type }) {
       });
     }
   }, [search, type]);
-  console.log(items);
+
   const render =
     items.length > 0 &&
     items.map(item => {
-      return <Item item={item} />;
+      return <Item item={item} key={item.id} />;
     });
   return (
     <div className="list">

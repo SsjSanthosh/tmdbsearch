@@ -17,13 +17,13 @@ export default function Item({ item }) {
             {item.original_title ? item.original_title : item.original_name}
           </p>
           <p className="item-vote">
-            {item.vote_average} <i class="fas fa-star"></i>
+            {item.vote_average} <i className="fas fa-star"></i>
           </p>
         </div>
         <p className="item-desc">
           {item.overview.length > 100
             ? item.overview.substring(0, 100) + "..."
-            : item.overview.length == 0
+            : item.overview.length === 0
             ? "No overview available"
             : item.overview}
         </p>

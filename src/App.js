@@ -1,19 +1,12 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Route,
-  Switch,
-  Router,
-  withRouter
-} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import SearchHeader from "./Components/SearchHeader";
-import ItemList from "./Components/ItemList";
+
 import { Provider } from "react-redux";
 import store from "./Redux/Store";
 import DisplayItem from "./Components/DisplayItem";
 import Main from "./Main";
-function App({ history }) {
+function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
