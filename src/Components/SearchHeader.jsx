@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./Header.scss";
 import { updateSearch } from "./../Redux/searchActions";
 import { connect } from "react-redux";
+
 function SearchHeader(props) {
   const { search, updateSearch } = props;
-  const type = document.querySelector(".type");
 
   const [option, setOption] = useState("movie");
   const handleSearchChange = e => {

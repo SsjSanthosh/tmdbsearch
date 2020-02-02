@@ -56,7 +56,7 @@ function DisplayItem(props) {
                 <p className="display-runtime">
                   Runtime -{" "}
                   {item.runtime ? (
-                    <span>{item.runtime} minutes</span>
+                    <span>{item.runtime} </span>
                   ) : (
                     <span>{item.episode_run_time[0]}</span>
                   )}{" "}
