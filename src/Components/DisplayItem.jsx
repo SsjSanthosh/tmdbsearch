@@ -21,7 +21,12 @@ function DisplayItem(props) {
     backgroundSize: "cover"
   };
   console.log(item);
-
+  if (item.budget == 0) {
+    delete item.budget;
+  }
+  if (item.revenue == 0) {
+    delete item.revenue;
+  }
   return (
     <div>
       {!loading && (
@@ -84,20 +89,23 @@ function DisplayItem(props) {
                   Plot - <br />
                   {item.overview}
                 </p>
-                <p className="display-budget">
-                  {item.budget ? (
+
+                {item.budget && (
+                  <p className="display-budget">
                     <span>
                       Budget - ${" "}
                       {parseInt(item.budget)
                         .toFixed(2)
                         .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
                     </span>
-                  ) : (
-                    <span>Number of seasons - {item.number_of_seasons}</span>
-                  )}
-                </p>
+                  </p>
+                )}
+                {item.number_of_seasons && (
+                  <span>Number of seasons - {item.number_of_seasons}</span>
+                )}
+
                 <p className="display-boxoffice">
-                  {item.revenue ? (
+                  {item.revenue && (
                     <span>
                       {" "}
                       Box-Office - $
@@ -105,10 +113,14 @@ function DisplayItem(props) {
                         .toFixed(2)
                         .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
                     </span>
-                  ) : (
+                  )}
+                </p>
+                <p className="display-numepis">
+                  {item.number_of_episodes && (
                     <span>Number of episodes - {item.number_of_episodes}</span>
                   )}
                 </p>
+
                 <p className="display-status">
                   {item.status && <span>Status - {item.status} </span>}
                 </p>
